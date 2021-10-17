@@ -1,0 +1,55 @@
+<div class="box">
+
+    <section *ngIf="user.email">
+
+        <h2>Register</h2>
+    
+        <form #myForm="ngForm" (submit)="register()">
+
+            <mat-form-field appearance="outline">
+                <mat-label>first name: </mat-label>
+                <input matInput #firstNameBox="ngModel" type="text" name="firstName" [(ngModel)]="user.firstName" minlength="2" maxlength="20" pattern="^[^\s][\w\s]*" required>
+                <mat-error *ngIf="firstNameBox.errors?.required && firstNameBox.touched">Missing first name.</mat-error>
+                <mat-error *ngIf="firstNameBox.errors?.minlength &&!firstNameBox.errors?.pattern&& firstNameBox.touched">minimum 2 characters.</mat-error>
+                <mat-error *ngIf="firstNameBox.errors?.maxlength && firstNameBox.touched">maximum 20 characters.</mat-error>
+                <mat-error *ngIf="firstNameBox.errors?.pattern && firstNameBox.touched">first name invalid.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>last name: </mat-label>
+                <input matInput #lastNameBox="ngModel" type="text" name="lastName" [(ngModel)]="user.lastName" minlength="2" maxlength="20" pattern="^[^\s][\w\s]*" required>
+                <mat-error *ngIf="lastNameBox.errors?.required && lastNameBox.touched">Missing last name.</mat-error>
+                <mat-error *ngIf="lastNameBox.errors?.minlength &&!lastNameBox.errors?.pattern&& lastNameBox.touched">minimum 2 characters.</mat-error>
+                <mat-error *ngIf="lastNameBox.errors?.maxlength && lastNameBox.touched">maximum 20 characters.</mat-error>
+                <mat-error *ngIf="lastNameBox.errors?.pattern && lastNameBox.touched">last name invalid.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>city: </mat-label>
+                <input matInput #cityBox="ngModel" type="text" name="city" [(ngModel)]="user.city" minlength="2" maxlength="40" pattern="^[^\s][\w\s]*" required>
+                <mat-error *ngIf="cityBox.errors?.required && cityBox.touched">Missing city.</mat-error>
+                <mat-error *ngIf="cityBox.errors?.minlength &&!cityBox.errors?.pattern && cityBox.touched">minimum 2 characters.</mat-error>
+                <mat-error *ngIf="cityBox.errors?.maxlength && cityBox.touched">maximum 40 characters.</mat-error>
+                <mat-error *ngIf="cityBox.errors?.pattern && cityBox.touched">city invalid.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>street: </mat-label>
+                <input matInput #streetBox="ngModel" type="text" name="street" [(ngModel)]="user.street" minlength="2" maxlength="40" pattern="^[^\s][\w\s]*" required>
+                <mat-error *ngIf="streetBox.errors?.required && streetBox.touched">Missing street.</mat-error>
+                <mat-error *ngIf="streetBox.errors?.minlength &&!streetBox.errors?.pattern&& streetBox.touched">minimum 2 characters.</mat-error>
+                <mat-error *ngIf="streetBox.errors?.maxlength && streetBox.touched">maximum 40 characters.</mat-error>
+                <mat-error *ngIf="streetBox.errors?.pattern && streetBox.touched">street invalid.</mat-error>
+            </mat-form-field>
+    
+            <button mat-stroked-button [disabled]="myForm.form.invalid">Register</button>
+    
+        </form>
+
+    </section>
+
+    <h1 *ngIf="!user.email">finish first step</h1>
+
+
+
+</div>

@@ -1,0 +1,13 @@
+<div>
+    <section>
+        <span>Name: {{product.name}}</span><br>
+        <span>Price: {{product.price | currency}}</span><br>
+        <span>Category: {{product.category.name}}</span><br>
+    </section>
+    <section>
+        <img src={{url}}>
+        <br>
+        <button mat-raised-button (click)="openDialog()">add to cart</button>
+    </section>
+
+</div>

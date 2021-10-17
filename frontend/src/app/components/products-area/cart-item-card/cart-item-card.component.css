@@ -1,0 +1,37 @@
+div{
+    border: 1px solid black;
+    margin: 10px;
+    background-image: linear-gradient(45deg, lightgreen, white);
+    color: black;
+    border-radius: 20px;
+    position:relative;
+    white-space: nowrap;
+    overflow: hidden;
+    /* min-height: 135px; */
+    min-height: 125px;
+
+}
+section:first-of-type{
+    text-align: left;
+    margin-left: 6px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+img{
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-right: 7px;
+}
+section:nth-of-type(2){
+    top: 0;
+    right:0;
+    bottom: 13px;
+    position:absolute;
+}
+button{
+    margin-bottom: 10px;
+    position: relative;
+    left: 17px;
+}

@@ -1,0 +1,11 @@
+<div>
+    <section>
+        <h4>available products in our store is {{productsAmount}}</h4>
+        <h4>number of orders submitted in our store is {{ordersAmount}}</h4>
+        <!-- <h4 *ngIf="cart&&cart.isOpen==='yes'">you have open cart from {{cart.creationDate}}</h4> -->
+        <h4 *ngIf="cart&&cart.isOpen==='yes'">you have open cart from {{goodCreationDate}}</h4>
+        <!-- <h4 *ngIf="cart&&cart.isOpen==='not yet'&&lastOrder">your last purchase was on {{lastOrder.orderDate}}</h4> -->
+        <h4 *ngIf="cart&&cart.isOpen==='not yet'&&lastOrder">your last purchase was on {{goodLastOrderDate}}</h4>
+        <h4 *ngIf="cart&&cart.isOpen==='not yet'&&user&&isFirstOrder==='not existing'">welcome {{user.firstName}} {{user.lastName}}</h4>
+    </section>
+</div>

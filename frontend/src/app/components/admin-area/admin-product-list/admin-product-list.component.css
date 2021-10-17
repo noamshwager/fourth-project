@@ -1,0 +1,13 @@
+div{
+    height: 100%;
+}
+section{
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    /* height: 88%; */
+    height: 85%;
+}
+app-admin-product-card{
+    display: inline-block;
+}

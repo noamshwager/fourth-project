@@ -1,0 +1,27 @@
+form{
+    width: 100%;
+    margin: auto;
+    /* text-align: left; */
+}
+div{
+    width: 100%;
+}
+mat-form-field{
+    width: 100%;
+}
+button{
+    width: 100%;
+}
+div{
+    position: relative;
+    height: 100%;
+}
+section{
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+}
+a{
+    position: absolute;
+    left: 10px;
+}

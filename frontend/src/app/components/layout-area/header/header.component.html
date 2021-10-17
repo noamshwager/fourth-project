@@ -1,0 +1,21 @@
+<div>
+
+    <img src="assets/images/cart.png">
+
+    <section>
+
+        <span>our email: groceries@gmail.com</span>
+        <br>
+        <br>
+
+        <ng-container *ngIf="!user">
+            <span>Hello Guest</span>
+        </ng-container>
+
+        <ng-container *ngIf="user">
+            <span><a routerLink="/logout">Logout</a> | Hello {{user.firstName}} {{user.lastName}}</span>
+        </ng-container>
+
+    </section>
+
+</div>

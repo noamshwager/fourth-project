@@ -1,0 +1,32 @@
+div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+section:first-child{
+    height: 98%;
+    width: 30%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    position: relative;
+}
+section:nth-child(2){
+    width: 60%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 98%;
+    position: relative;
+}
+div > *{
+    border: 2px solid black;
+}
+section:nth-child(1)> button{
+    position: absolute;
+    right: 0;
+}
+section:nth-child(2)> button{
+    position: absolute;
+    left: 0;
+}

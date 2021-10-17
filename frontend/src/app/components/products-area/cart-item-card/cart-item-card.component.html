@@ -1,0 +1,17 @@
+<div>
+
+    <section>
+        <span>Name: {{cartItem.product.name}}</span><br>
+        <span>Quantity: {{cartItem.quantity}}</span><br>
+        <span>Price: {{cartItem.totalPrice | currency}}</span>
+    </section>
+    <section>
+        <!-- <button mat-stroked-button (click)="deleteItemCard()">X</button> -->
+        <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> -->
+            <button mat-icon-button color="primary" (click)="deleteItemCard()">
+              <mat-icon>clear</mat-icon>
+            </button>
+        <br>
+        <img src={{url}} >
+    </section>
+</div>

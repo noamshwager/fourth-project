@@ -1,0 +1,10 @@
+<div (click)="editProduct()">
+    <section>
+        <span>Name: {{product.name}}</span><br>
+        <span>Price: {{product.price | currency}}</span><br>
+        <span>Category: {{product.category.name}}</span>
+    </section>
+    <section>
+        <img src={{url}}>
+    </section>
+</div>

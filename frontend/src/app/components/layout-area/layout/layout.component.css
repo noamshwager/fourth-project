@@ -1,0 +1,24 @@
+div {
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 15% 5% 80%;
+}
+
+header {
+    border: 1px solid black;
+    grid-column: span 6;
+}
+app-header{
+    overflow-x: hidden;
+}
+
+nav{
+    grid-column: span 6;
+}
+
+main {
+    grid-column: span 6;
+}
+

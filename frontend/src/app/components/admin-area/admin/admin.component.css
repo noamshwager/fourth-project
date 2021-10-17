@@ -1,0 +1,21 @@
+div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+app-edit-product{
+    width: 30%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    overflow-x: hidden;
+}
+app-admin-product-list{
+    width: 60%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+div > *{
+    border: 2px solid black;
+}

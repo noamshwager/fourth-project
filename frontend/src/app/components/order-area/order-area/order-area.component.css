@@ -1,0 +1,23 @@
+div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+app-order-cart{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 98%;
+    width: 30%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+}
+app-order{
+    width: 60%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    height: 98%;
+    overflow-x: hidden;
+}
+div > *{
+    border: 2px solid black;
+}

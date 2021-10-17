@@ -1,0 +1,12 @@
+<div>
+    <h1>My Cart</h1>
+    <hr>
+
+    <section>
+        <app-cart-item-card *ngFor="let c of cartItems" [cartItem]="c"></app-cart-item-card>
+        <h1 *ngIf="cartItems.length===0">cart is empty</h1>
+    </section>
+    <span>total price: {{totalPrice | currency}}</span>
+    <button mat-stroked-button routerLink="/order">Order</button>
+    <button mat-stroked-button (click)="deleteCartItems()">delete all items</button>
+</div>

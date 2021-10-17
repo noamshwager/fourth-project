@@ -1,0 +1,18 @@
+section{
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 80%;
+}
+div{
+    overflow-y: hidden;
+    height: 100%;
+}
+button{
+    margin-top: 5px;
+    margin-left: 5px;
+}
+h1{
+    margin-bottom: 5px;
+    margin-top: 10px;
+}

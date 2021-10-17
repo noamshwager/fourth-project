@@ -1,0 +1,62 @@
+<div class="box">
+
+    <!-- <button mat-stroked-button (click)="changeToAddProduct()">Add</button> -->
+    <button mat-fab color="primary" (click)="changeToAddProduct()">
+        <mat-icon>add</mat-icon>
+      </button>
+
+    <ng-container *ngIf="product.name===undefined">
+        <h2>click product to edit it or add a new one</h2>
+    </ng-container>
+
+    <ng-container *ngIf="product.name!==undefined">
+        
+        <form #myForm="ngForm" (submit)="register()">
+
+            <h3 *ngIf="product._id">edit product</h3>
+            <h3 *ngIf="!product._id">add product</h3>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Product name: </mat-label>
+                <input matInput #nameBox="ngModel" type="text" name="name" [(ngModel)]="product.name" minlength="2" maxlength="20" pattern="^[^\s][\w\s]*" required>
+                <mat-error *ngIf="nameBox.errors?.required && nameBox.touched">Missing name.</mat-error>
+                <mat-error *ngIf="nameBox.errors?.minlength &&!nameBox.errors?.pattern&& nameBox.touched">minimum 2 characters.</mat-error>
+                <mat-error *ngIf="nameBox.errors?.maxlength && nameBox.touched">maximum 20 characters.</mat-error>
+                <mat-error *ngIf="nameBox.errors?.pattern && nameBox.touched">name invalid.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Product price: </mat-label>
+                <input matInput #priceBox="ngModel" type="number" name="price" [(ngModel)]="product.price" min="0" required>
+                <mat-error *ngIf="priceBox.errors?.required && priceBox.touched">Missing price.</mat-error>
+                <mat-error *ngIf="priceBox.errors?.min && priceBox.touched">price can't be negative.</mat-error>
+            </mat-form-field>
+
+            <label>image: </label>
+            <input #imageBox="ngModel" type="file" name="picture" [(ngModel)]="imageFlag" accept="images/*" (change)="saveImage($event)" required>
+            <span *ngIf="imageBox.errors?.required && imageBox.touched">Missing image.</span>
+            <br>
+            <br>
+
+            <!-- <label>category: </label> -->
+
+            <mat-form-field appearance="outline">
+                <mat-label>category: </mat-label>
+                    <mat-select [(ngModel)]="product.categoryId" name="categoryId">
+                        <mat-option *ngFor="let c of categories" value="{{c._id}}">{{c.name}}</mat-option>
+                    </mat-select>
+            </mat-form-field>
+            <!-- <select (change)="getCategory($event)" [(ngModel)]="product.categoryId" name="categoryId">
+                <option *ngFor="let c of categories" value="{{c._id}}">{{c.name}}</option>
+            </select> -->
+
+            <br>
+
+            <button mat-stroked-button *ngIf="product._id" [disabled]="myForm.form.invalid">edit</button>
+            <button mat-stroked-button *ngIf="!product._id" [disabled]="myForm.form.invalid">add</button>
+
+        </form>
+
+    </ng-container>
+
+</div>

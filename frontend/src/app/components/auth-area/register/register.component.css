@@ -1,0 +1,14 @@
+div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+app-register-initial,app-register-final{
+    overflow-x:hidden;
+    width: 45%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+div > *{
+    border: 2px solid black;
+}

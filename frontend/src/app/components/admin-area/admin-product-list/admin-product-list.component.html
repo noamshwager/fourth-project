@@ -1,0 +1,11 @@
+<div>
+    <br>
+    <button mat-stroked-button *ngFor="let c of categories" (click)="getProducts($event)" value="{{c._id}}">{{c.name}}</button>
+    <button mat-stroked-button (click)="getProducts($event)" value="all">all</button>
+    <br>
+    <hr>
+
+    <section>
+        <app-admin-product-card *ngFor="let p of products" [product]="p" ></app-admin-product-card>
+    </section>
+</div>

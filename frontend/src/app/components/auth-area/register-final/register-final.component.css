@@ -1,0 +1,26 @@
+form {
+    width: 100%;
+    margin: auto;
+    text-align: left;
+}
+
+span {
+    position: absolute;
+    margin: 0 20px;
+    color: red;
+    font-size: x-large;
+}
+mat-form-field{
+    width: 100%;
+}
+
+:host ::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+:host ::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+
+:host ::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+    width: 133.33333%;
+}
+button{
+    width: 100%;
+}

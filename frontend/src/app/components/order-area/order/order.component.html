@@ -1,0 +1,50 @@
+<div class="box">
+
+    <h4 *ngIf="!text">Order</h4>
+
+    <form #myForm="ngForm" *ngIf="!text" (submit)="addOrder()">
+
+        <mat-form-field appearance="outline">
+            <mat-label>city: </mat-label>
+            <input matInput #cityBox="ngModel" type="text" name="city" [(ngModel)]="order.city" (dblclick)="fillCity($event)" minlength="2" maxlength="40"  pattern="^[^\s][\w\s]*" required>
+            <mat-error *ngIf="cityBox.errors?.required && cityBox.touched">Missing city.</mat-error>
+            <mat-error *ngIf="cityBox.errors?.minlength &&!cityBox.errors?.pattern&& cityBox.touched">minimum 2 characters.</mat-error>
+            <mat-error *ngIf="cityBox.errors?.maxlength && cityBox.touched">maximum 40 characters.</mat-error>
+            <mat-error *ngIf="cityBox.errors?.pattern && cityBox.touched">city invalid.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>street: </mat-label>
+            <input matInput #streetBox="ngModel" type="text" name="street" [(ngModel)]="order.street" (dblclick)="fillCity($event)" minlength="2" maxlength="40" pattern="^[^\s][\w\s]*" required>
+            <mat-error *ngIf="streetBox.errors?.required && streetBox.touched">Missing street.</mat-error>
+            <mat-error *ngIf="streetBox.errors?.minlength &&!streetBox.errors?.pattern&& streetBox.touched">minimum 2 characters.</mat-error>
+            <mat-error *ngIf="streetBox.errors?.maxlength && streetBox.touched">maximum 40 characters.</mat-error>
+            <mat-error *ngIf="streetBox.errors?.pattern && streetBox.touched">street invalid.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>shipping date</mat-label>
+            <input matInput #shippingDateBox="ngModel" type="date" name="shippingDate" [(ngModel)]="order.shippingDate" required>
+            <mat-error *ngIf="shippingDateBox.errors?.required && shippingDateBox.touched">Missing shipping date.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>credit card: </mat-label>
+            <input matInput #creditCardBox="ngModel" type="text" name="creditCard" [(ngModel)]="order.creditCard" maxlength="16" pattern="^[0-9]{16}$" required>
+            <mat-error *ngIf="creditCardBox.errors?.required && creditCardBox.touched">Missing credit card.</mat-error>
+            <mat-error *ngIf="creditCardBox.errors?.maxlength && creditCardBox.touched">credit card too long.</mat-error>
+            <mat-error *ngIf="creditCardBox.errors?.pattern && creditCardBox.touched">credit card invalid.</mat-error>
+        </mat-form-field>
+
+        <button mat-stroked-button [disabled]="myForm.form.invalid">order</button>
+
+    </form>
+
+    <section *ngIf="text">
+        <h1>purchase completed</h1>
+        <h1>to download receipt click the button: <button mat-stroked-button (click)="downloadPDF()">download</button></h1>
+        <a routerLink="/home">back to home</a>
+    </section>
+
+
+</div>

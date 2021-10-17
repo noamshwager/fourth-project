@@ -1,0 +1,13 @@
+<div>
+    <mat-form-field appearance="outline">
+        <mat-label>search: </mat-label>
+        <input matInput type="text" name="search" [(ngModel)]="search" (input)="searchReceipt()">
+    </mat-form-field>
+    <a *ngIf="isOrderFinished!=='yes'" routerLink="/shopping-area">back to shop</a>
+
+    <section>
+        <app-order-cart-item-card *ngFor="let c of cartItems" [cartItem]="c"></app-order-cart-item-card>
+    </section>
+    
+    <span>total price: {{totalPrice |currency}}</span>
+</div>

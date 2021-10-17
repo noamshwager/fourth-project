@@ -1,0 +1,16 @@
+<section>
+    <mat-form-field appearance="outline">
+        <mat-label>search: </mat-label>
+        <input matInput #searchBox="ngModel" type="text" name="search" [(ngModel)]="search" pattern="^[^\s][\w\s]*" >
+    </mat-form-field>
+    <button mat-stroked-button [disabled]="searchBox.errors?.pattern||!search||search===''" (click)="searchProducts()">search</button>
+</section>
+
+<button mat-stroked-button *ngFor="let c of categories" (click)="getProducts($event)" value="{{c._id}}">{{c.name}}</button>
+<button mat-stroked-button (click)="getProducts($event)" value="all">all</button>
+<br>
+<hr>
+
+<section>
+    <app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
+</section>

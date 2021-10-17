@@ -1,0 +1,17 @@
+<div>
+    <section [style.width]="cart" [style.border]="border" [style.margin-left]="margin" [style.margin-right]="margin">
+        <button *ngIf="cart==='30%'" mat-stroked-button (click)="minimize()">
+            <mat-icon >arrow_back</mat-icon>
+          </button>
+        <app-cart></app-cart>
+    </section>
+    <section [style.width]="products" [style.margin-right]="margin">
+        <!-- <button *ngIf="cart==='30%'" mat-stroked-button (click)="minimize()">minimize</button> -->
+        <!-- <button *ngIf="cart==='0'" mat-stroked-button (click)="minimize()">enlarge</button> -->
+        <button *ngIf="cart==='0'" mat-stroked-button (click)="minimize()">
+            <mat-icon >arrow_forward</mat-icon>
+          </button>
+        <br>
+        <app-product-list ></app-product-list>
+    </section>
+</div>

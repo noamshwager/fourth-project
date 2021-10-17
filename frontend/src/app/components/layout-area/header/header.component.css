@@ -1,0 +1,21 @@
+img{
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+    top: 13px;
+    left:7px;
+    bottom: 0;
+    position:absolute;
+}
+div{
+    height: 100%;
+    position:relative;
+    white-space: nowrap;
+    overflow: hidden;
+}
+section{
+    text-align: right;
+    height: 100%;
+    margin-top: 20px;
+    margin-right: 5px;
+}

@@ -1,0 +1,53 @@
+<div class="box">
+
+    <section *ngIf="isComplete!=='yes'">
+
+        <h2>Register</h2>
+    
+        <form #myForm="ngForm" (submit)="register()">
+
+            <mat-form-field appearance="outline">
+                <mat-label>email: </mat-label>
+                <input matInput #emailBox="ngModel" type="email" name="email" [(ngModel)]="user.email" minlength="8" maxlength="40" email required>
+                <mat-error *ngIf="emailBox.errors?.required && emailBox.touched">Missing email.</mat-error>
+                <mat-error *ngIf="emailBox.errors?.email && emailBox.touched">Invalid email.</mat-error>
+                <mat-error *ngIf="emailBox.errors?.minlength &&!emailBox.errors?.email && emailBox.touched">minimum 8 characters.</mat-error>
+                <mat-error *ngIf="emailBox.errors?.maxlength &&!emailBox.errors?.email && emailBox.touched">maximum 40 characters.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>id: </mat-label>
+                <input matInput #idBox="ngModel" type="text" name="id" [(ngModel)]="user.id" minlength="9" maxlength="9" pattern="\d+" required>
+                <mat-error *ngIf="idBox.errors?.required && idBox.touched">Missing id.</mat-error>
+                <mat-error *ngIf="idBox.errors?.minlength &&!idBox.errors?.pattern&& idBox.touched">id too short.</mat-error>
+                <mat-error *ngIf="idBox.errors?.maxlength && idBox.touched">id too long.</mat-error>
+                <mat-error *ngIf="idBox.errors?.pattern && idBox.touched">id invalid.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>password: </mat-label>
+                <input matInput #passwordBox="ngModel" type="password" name="password" [(ngModel)]="user.password" minlength="4" maxlength="25" pattern="^[^\s][\w]*" required>
+                <mat-error *ngIf="passwordBox.errors?.required && passwordBox.touched">Missing password.</mat-error>
+                <mat-error *ngIf="passwordBox.errors?.minlength &&!passwordBox.errors?.pattern&& passwordBox.touched">minimum 4 characters.</mat-error>
+                <mat-error *ngIf="passwordBox.errors?.maxlength && passwordBox.touched">maximum 25 characters.</mat-error>
+                <mat-error *ngIf="passwordBox.errors?.pattern && passwordBox.touched">password invalid.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>confirm password: </mat-label>
+                <input matInput #confirmPasswordBox="ngModel" type="password" name="confirmPassword" [(ngModel)]="confirmPassword" minlength="4" maxlength="25" pattern="^[^\s][\w]*" required>
+                <mat-error *ngIf="confirmPasswordBox.errors?.required && confirmPasswordBox.touched">Missing confirm password.</mat-error>
+                <mat-error *ngIf="confirmPasswordBox.errors?.minlength &&!confirmPasswordBox.errors?.pattern&& confirmPasswordBox.touched">minimum 4 characters.</mat-error>
+                <mat-error *ngIf="confirmPasswordBox.errors?.maxlength && confirmPasswordBox.touched">maximum 25 characters.</mat-error>
+                <mat-error *ngIf="confirmPasswordBox.errors?.pattern && confirmPasswordBox.touched">confirm password invalid.</mat-error>
+            </mat-form-field>
+    
+            <button mat-stroked-button [disabled]="myForm.form.invalid">go to next step</button>
+    
+        </form>
+
+    </section>
+
+    <h1 *ngIf="isComplete==='yes'">finish second step</h1>
+
+</div>

@@ -1,0 +1,12 @@
+div{
+    border: 2px solid black;
+    height: 90%;
+    width: 90%;
+    margin-left: 5%;
+    position: relative;
+}
+h2{
+    position: absolute;
+    top: 40%;
+    left: 25%;
+}
